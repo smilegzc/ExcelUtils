@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletResponse;
 import java.io.OutputStream;
 import java.lang.reflect.Field;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -210,7 +212,7 @@ public class ExcelUtils {
             fileName += System.currentTimeMillis() + ".xlsx";
             fileName = new String(fileName.getBytes(), "ISO8859-1");
             response.setContentType("application/octet-stream;charset=ISO8859-1");
-            response.setHeader("Content-Disposition", "attachment;filename=" + fileName);
+            response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "ISO8859-1"));
             response.addHeader("Pargam", "no-cache");
             response.addHeader("Cache-Control", "no-cache");
             OutputStream os = response.getOutputStream();

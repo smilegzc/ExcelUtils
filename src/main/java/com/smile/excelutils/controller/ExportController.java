@@ -1,11 +1,11 @@
 package com.smile.excelutils.controller;
 
 import com.smile.excelutils.service.TtlProductInfoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Random;
 
@@ -13,7 +13,7 @@ import java.util.Random;
 @RequestMapping("/excelUtils")
 public class ExportController {
 
-    @Autowired
+    @Resource
     private TtlProductInfoService productInfoService;
 
     @GetMapping("/export")

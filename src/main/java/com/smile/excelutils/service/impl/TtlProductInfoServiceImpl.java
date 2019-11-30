@@ -7,9 +7,9 @@ import com.smile.excelutils.mapper.TtlProductInfoMapper;
 import com.smile.excelutils.service.TtlProductInfoService;
 import com.smile.excelutils.utils.ExcelUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 import java.util.concurrent.Callable;
@@ -22,7 +22,7 @@ public class TtlProductInfoServiceImpl implements TtlProductInfoService {
     // 每个线程导出记录最大行数
     private static final int THREAD_MAX_ROW = 20000;
 
-    @Autowired
+    @Resource
     private TtlProductInfoMapper mapper;
 
     @Override
