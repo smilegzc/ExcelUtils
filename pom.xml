@@ -70,7 +70,6 @@
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.1</version>
         </dependency>
-
         <!-- beanutils -->
         <dependency>
             <groupId>commons-beanutils</groupId>
